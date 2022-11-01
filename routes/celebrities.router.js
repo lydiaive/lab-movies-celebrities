@@ -3,11 +3,17 @@ const router = require("express").Router();
 const Celebrity = require("../models/Celebrity.model")
 
 router.get("/new-celebrity", async(req, res, next) => {
-  res.render("celebs/new-celebrity");
+  res.render("celebs/new-celebrity")
 });
 
 router.get("/celebrities", async(req, res, next) => {
-  res.render("celebs/celebrities");
+  try {
+    const dbCelebs = await Celebrity.find()
+    console.log(dbCelebs)
+    res.render("celebs/celebrities", {dbCelebs})
+  } catch (err) {
+    console.log(err)
+  }
 });
 
 router.get("/create", async(req, res, next) => {
