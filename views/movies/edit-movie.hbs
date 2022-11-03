@@ -1,0 +1,31 @@
+
+<h2 class="title is-2">Edit the Movie: {{dbMovies.title}}</h2>
+
+<form class="box" action="/movies/m/{{_id}}/edit" method="post">
+  <div class="field">
+    <label class="label" for="title"> Title:</label>
+    <input type="text" name="title" id="title=" value="{{dbMovies.title}}"/>
+  </div>
+  <div class="field">
+    <label class="label" for="genre"> Genre:</label>
+    <input type="text" name="genre" id="plot" value="{{dbMovies.genre}}"/>
+  </div>
+  <div class="field">
+    <label class="label" for="plot"> Plot:</label>
+    <textarea class="textarea" id="plot" name="genre" cols="30" rows="4"> {{dbMovies.plot}}</textarea>
+  </div>
+  <div class="field">
+      {{#each data}}
+        {{#if this.checked}}
+          <input type="checkbox" id="{{this.name}}" name="cast" value="{{this._id}}" checked>
+          <label for="{{this.name}}">{{this.name}}</label><br>
+          {{else}}
+          <input type="checkbox" id="{{this.name}}" name="cast" value="{{this._id}}">
+          <label for="{{this.name}}">{{this.name}}</label><br>
+          {{/if}}
+      {{/each}}
+  </div>
+  <button class="button is-primary" type="submit">Update</button>
+</form>
+
+

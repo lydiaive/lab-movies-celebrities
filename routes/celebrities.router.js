@@ -1,10 +1,11 @@
 const router = require("express").Router();
 
 const Celebrity = require("../models/Celebrity.model")
+const Movie = require("../models/Movie.model")
 
-router.get("/new-celebrity", async(req, res, next) => {
+/* router.get("/new-celebrity", async(req, res, next) => {
   res.render("celebs/new-celebrity")
-});
+}); */
 
 router.get("/celebrities", async(req, res, next) => {
   try {
@@ -17,7 +18,7 @@ router.get("/celebrities", async(req, res, next) => {
 });
 
 router.get("/create", async(req, res, next) => {
-  res.render("celebs/celebrities");
+  res.render("celebs/new-celebrity");
 });
 
 router.post("/create", async(req, res) => {
@@ -31,8 +32,6 @@ router.post("/create", async(req, res) => {
   }
 })
 
-/* router.get("/celebrities", async(req, res, next) => {
-  res.render("celebs/celebrities");
-}); */
+
 
 module.exports = router;

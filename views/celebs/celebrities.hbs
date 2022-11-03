@@ -1,4 +1,7 @@
-<h1>hello</h1>
+<h1 class="title is-1">Celebrity Overview</h1>
+<section class="panel is-primary">
+  <p class="panel-heading">All the created Celebrities:</p>
 {{#each dbCelebs}}
-    <p>Name: {{this.name}}</p>
+    <p class="panel-block">{{this.name}}</p>
 {{/each}}
+</section>

@@ -1,0 +1,16 @@
+<h1 class="title is-1">Movie Overview</h1>
+<section class="panel is-primary">
+  <p class="panel-heading">All the created Movie Titles:</p>
+    {{#each dbMovies}}
+    <div class="panel-block">
+        <p class="is-flex-grow-1">{{this.title}}</p>
+        <a class="button is-primary mr-2" href="/movies/m/{{this._id}}">Show Details</a>
+        <form class="level-right" action="/movies/m/{{this._id}}/delete" method="post">
+            <button class="button">Delete</button>
+        </form></div> 
+    {{/each}}
+</section>
+
+
+
+

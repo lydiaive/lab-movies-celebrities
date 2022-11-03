@@ -1,0 +1,18 @@
+{{#with dbMovies}}
+<h1 class="title is-1">{{this.title}}</h1>
+<section class="card">
+    <div class="card-content">
+        <p>Genre: {{this.genre}}</p>
+        <p>Plot: {{this.plot}}</p>
+        <p>Cast:</p>
+        <ul class="content">
+        {{#each this.cast}}
+            <li class="tag is-warning">{{this.name}}</li>
+        {{/each}}
+        </ul>
+    </div>
+    <div class="card-footer">
+        <a class="button" href="/movies/m/{{this._id}}/edit">Edit the Movie</a>
+    </div>
+    {{/with}}
+</section>
